@@ -4,21 +4,26 @@
 
 volatile unsigned int ReceiveData=0;
 
+unsigned short data;
 
 void USART1_IRQHandler(void)
-{
-	if (USART1->SR & USART_SR_RXNE) //if receiver not empty  
+{unsigned short temp;
+temp=USART1->SR	;
+	if (temp & USART_SR_RXNE) //if receiver not empty  
 	{
 		GPIOE->BSRR = 1<<10; 
+		data=USART1->DR;
+
 	}
-	if (USART1->SR & USART_SR_TXE)  //if tranceiver is empty
+	if (temp & USART_SR_TXE)  //if tranceiver is empty
 	{
 		GPIOE->BSRR = 1<<11; 
 	}
-	if (USART1->SR & USART_SR_TC)   //if transmission complete
+	if (temp & USART_SR_TC)   //if transmission complete
 	{
 	GPIOE->BSRR = 1<<11; 
-}
+	USART1->SR=tmp&~USART_SR_TC;
+	}
 }
 
 int main(void)
