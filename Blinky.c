@@ -7,8 +7,10 @@ volatile unsigned int ReceiveData=0;
 unsigned short data;
 
 void USART2_IRQHandler(void)
-{unsigned short temp;
-temp=USART2->SR	;
+{
+	unsigned short temp;
+  temp=USART2->SR	;
+	
 	if (temp & USART_SR_RXNE) //if receiver not empty  
 	{
 		GPIOE->BSRR = 1<<10; 
@@ -17,11 +19,11 @@ temp=USART2->SR	;
 		USART2->SR &= ~USART_SR_RXNE; //clear the flag
 
 	}
-	if (temp & USART_SR_TXE)  //if tranceiver is empty
-	{
+	//if (temp & USART_SR_TXE)  //if tranceiver is empty
+	//{
 		GPIOE->BSRR = 1<<11; 
 		USART2->SR &= ~USART_SR_TXE; //clear the flag
-	}
+	//}
 	if (temp & USART_SR_TC)   //if transmission complete
 	{
 	GPIOE->BSRR = 1<<12; 
@@ -37,27 +39,21 @@ int main(void)
 	 
 	//sign of ready
 	GPIOE->CRH    = 0x33333333;//general purpoise PP_50MHz
-	GPIOE->BSRR = 1<<8|1<<9; 
+	GPIOD->CRL |= GPIO_CRL_CNF5_1;
+	GPIOD->CRL |= GPIO_CRL_MODE5;
+	//GPIOE->BSRR = 1<<8|1<<9; 
 	
 	//usart init
 	AFIO->MAPR = 0x8;//alternate function for usart2 enable
 
-//GPIOD->CRL |= GPIO_CRH_CNF4_1;
-//GPIOD->CRL |= GPIO_CRH_MODE4;
-//GPIOD->CRL |= GPIO_CRH_CNF5_1;
-//GPIOD->CRL |= GPIO_CRH_MODE5;
-//	
-//GPIOD->CRL |= GPIO_CRH_CNF3_0;	
-//GPIOD->CRL |= GPIO_CRH_CNF6_0;		
-
 		//UART
-	USART2->BRR = 0x09C4;
+	USART2->BRR=0x1D4C;
 	USART2->CR1 |= USART_CR1_RE|USART_CR1_TE|USART_CR1_UE|USART_CR1_RXNEIE; //enable receiver,transmitter,update,rec. interrupt
 	
 		//interrupts
 	NVIC_EnableIRQ(USART2_IRQn);
+	//GPIOE->ODR = 0;
 	USART2->DR = 0x31;
-	GPIOE->ODR = 0;
 
-while (1){}
+while (1){USART2->DR = 0x26;}
 }
