@@ -12,7 +12,8 @@ temp=USART2->SR	;
 	if (temp & USART_SR_RXNE) //if receiver not empty  
 	{
 		GPIOE->BSRR = 1<<10; 
-		data=USART1->DR;
+		data=USART2->DR;
+		USART2->DR=data;
 		USART2->SR &= ~USART_SR_RXNE; //clear the flag
 
 	}
@@ -32,14 +33,14 @@ int main(void)
 {	
 	//clocking
 	RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
-	RCC->APB2ENR |= RCC_APB2ENR_IOPEEN | RCC_APB2ENR_IOPDEN | RCC_APB2ENR_AFIOEN;
+	RCC->APB2ENR |= RCC_APB2ENR_IOPEEN | RCC_APB2ENR_IOPDEN | RCC_APB2ENR_AFIOEN | RCC_APB2ENR_IOPAEN;
 	 
 	//sign of ready
 	GPIOE->CRH    = 0x33333333;//general purpoise PP_50MHz
 	GPIOE->BSRR = 1<<8|1<<9; 
 	
 	//usart init
-	AFIO->MAPR = 0x4;//alternate function for usart2 enable
+	AFIO->MAPR = 0x8;//alternate function for usart2 enable
 
 //GPIOD->CRL |= GPIO_CRH_CNF4_1;
 //GPIOD->CRL |= GPIO_CRH_MODE4;
@@ -56,7 +57,7 @@ int main(void)
 		//interrupts
 	NVIC_EnableIRQ(USART2_IRQn);
 	USART2->DR = 0x31;
-	
+	GPIOE->ODR = 0;
 
 while (1){}
 }
