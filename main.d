@@ -1,9 +1,0 @@
-.\main.o: main.c
-.\main.o: stm32f10x.h
-.\main.o: stm32f10x_conf.h
-.\main.o: core_cm3.h
-.\main.o: D:\Keil\ARM\ARMCC\bin\..\include\stdint.h
-.\main.o: D:\Keil\ARM\Inc\ST\STM32F10x\system_stm32f10x.h
-.\main.o: stm32f10x_rcc.h
-.\main.o: stm32f10x_gpio.h
-.\main.o: stm32f10x_usart.h
