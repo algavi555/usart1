@@ -360,9 +360,9 @@
             <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define></Define>
+              <Define>STM32F10X_CL</Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

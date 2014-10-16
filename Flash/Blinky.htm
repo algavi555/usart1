@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Flash\Blinky.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Flash\Blinky.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Tue Oct 14 16:17:59 2014
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Thu Oct 16 15:07:44 2014
 <BR><P>
 <H3>Maximum Stack Usage =          0 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -93,8 +93,8 @@ Function Pointers
  <LI><a href="#[3b]">TIM7_IRQHandler</a> from startup_stm32f10x_cl.o(.text) referenced from startup_stm32f10x_cl.o(RESET)
  <LI><a href="#[38]">UART4_IRQHandler</a> from startup_stm32f10x_cl.o(.text) referenced from startup_stm32f10x_cl.o(RESET)
  <LI><a href="#[39]">UART5_IRQHandler</a> from startup_stm32f10x_cl.o(.text) referenced from startup_stm32f10x_cl.o(RESET)
- <LI><a href="#[2f]">USART1_IRQHandler</a> from blinky.o(.text) referenced from startup_stm32f10x_cl.o(RESET)
- <LI><a href="#[30]">USART2_IRQHandler</a> from startup_stm32f10x_cl.o(.text) referenced from startup_stm32f10x_cl.o(RESET)
+ <LI><a href="#[2f]">USART1_IRQHandler</a> from startup_stm32f10x_cl.o(.text) referenced from startup_stm32f10x_cl.o(RESET)
+ <LI><a href="#[30]">USART2_IRQHandler</a> from blinky.o(.text) referenced from startup_stm32f10x_cl.o(RESET)
  <LI><a href="#[31]">USART3_IRQHandler</a> from startup_stm32f10x_cl.o(.text) referenced from startup_stm32f10x_cl.o(RESET)
  <LI><a href="#[5]">UsageFault_Handler</a> from startup_stm32f10x_cl.o(.text) referenced from startup_stm32f10x_cl.o(RESET)
  <LI><a href="#[a]">WWDG_IRQHandler</a> from startup_stm32f10x_cl.o(.text) referenced from startup_stm32f10x_cl.o(RESET)
@@ -365,7 +365,7 @@ Global Symbols
 <P><STRONG><a name="[39]"></a>UART5_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_cl.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_cl.o(RESET)
 </UL>
-<P><STRONG><a name="[30]"></a>USART2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_cl.o(.text))
+<P><STRONG><a name="[2f]"></a>USART1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_cl.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_cl.o(RESET)
 </UL>
 <P><STRONG><a name="[31]"></a>USART3_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_cl.o(.text))
@@ -374,10 +374,10 @@ Global Symbols
 <P><STRONG><a name="[a]"></a>WWDG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_cl.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_cl.o(RESET)
 </UL>
-<P><STRONG><a name="[2f]"></a>USART1_IRQHandler</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, blinky.o(.text))
+<P><STRONG><a name="[30]"></a>USART2_IRQHandler</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, blinky.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_cl.o(RESET)
 </UL>
-<P><STRONG><a name="[48]"></a>main</STRONG> (Thumb, 98 bytes, Stack size 0 bytes, blinky.o(.text))
+<P><STRONG><a name="[48]"></a>main</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, blinky.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
 <P><STRONG><a name="[4b]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))

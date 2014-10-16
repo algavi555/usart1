@@ -1,18 +1,19 @@
 Dependencies for Project 'Blinky', Target 'MCBSTM32C': (DO NOT MODIFY !)
 F (.\startup_stm32f10x_cl.s)(0x532C2CE0)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I D:\Keil\ARM\RV31\INC-I D:\Keil\ARM\CMSIS\Include-I D:\Keil\ARM\Inc\ST\STM32F10x-o .\flash\startup_stm32f10x_cl.o --depend .\flash\startup_stm32f10x_cl.d)
 F (.\STM32F10xOPT.s)(0x532C2CE0)()
-F (.\system_stm32f10x_cl.c)(0x532C2CE0)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders-I D:\Keil\ARM\RV31\INC-I D:\Keil\ARM\CMSIS\Include-I D:\Keil\ARM\Inc\ST\STM32F10x-DSTM32F10X_CL-o .\flash\system_stm32f10x_cl.o --omf_browse .\flash\system_stm32f10x_cl.crf --depend .\flash\system_stm32f10x_cl.d)
+F (.\system_stm32f10x_cl.c)(0x532C2CE0)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders -I..\..\dex-I D:\Keil\ARM\RV31\INC-I D:\Keil\ARM\CMSIS\Include-I D:\Keil\ARM\Inc\ST\STM32F10x-DSTM32F10X_CL-o .\flash\system_stm32f10x_cl.o --omf_browse .\flash\system_stm32f10x_cl.crf --depend .\flash\system_stm32f10x_cl.d)
 I (D:\Keil\ARM\Inc\ST\STM32F10x\stm32f10x_cl.h)(0x532C2B9A)
-I (..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders\core_cm3.h)(0x4D527398)
+I (..\..\dex\core_cm3.h)(0x4D527398)
 I (D:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7FD94)
 I (D:\Keil\ARM\Inc\ST\STM32F10x\system_stm32f10x_cl.h)(0x532C2B9A)
-F (.\core_cm3.c)(0x532C2CE0)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders-I D:\Keil\ARM\RV31\INC-I D:\Keil\ARM\CMSIS\Include-I D:\Keil\ARM\Inc\ST\STM32F10x-DSTM32F10X_CL-o .\flash\core_cm3.o --omf_browse .\flash\core_cm3.crf --depend .\flash\core_cm3.d)
+F (.\core_cm3.c)(0x532C2CE0)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders -I..\..\dex-I D:\Keil\ARM\RV31\INC-I D:\Keil\ARM\CMSIS\Include-I D:\Keil\ARM\Inc\ST\STM32F10x-DSTM32F10X_CL-o .\flash\core_cm3.o --omf_browse .\flash\core_cm3.crf --depend .\flash\core_cm3.d)
 I (D:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7FD94)
-F (.\Blinky.c)(0x543D1477)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders-I D:\Keil\ARM\RV31\INC-I D:\Keil\ARM\CMSIS\Include-I D:\Keil\ARM\Inc\ST\STM32F10x-DSTM32F10X_CL-o .\flash\blinky.o --omf_browse .\flash\blinky.crf --depend .\flash\blinky.d)
-I (..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders\stm32f10x.h)(0x4D7874F4)
-I (..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders\core_cm3.h)(0x4D527398)
+F (.\Blinky.c)(0x543FA6FF)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders -I..\..\dex-I D:\Keil\ARM\RV31\INC-I D:\Keil\ARM\CMSIS\Include-I D:\Keil\ARM\Inc\ST\STM32F10x-DSTM32F10X_CL-o .\flash\blinky.o --omf_browse .\flash\blinky.crf --depend .\flash\blinky.d)
+I (..\..\dex\stm32f10x.h)(0x542A90CE)
+I (..\..\dex\stm32f10x_conf.h)(0x53E352EC)
+I (..\..\dex\core_cm3.h)(0x4D527398)
 I (D:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7FD94)
-I (..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders\system_stm32f10x.h)(0x4D7874EA)
-I (..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders\stm32f10x_gpio.h)(0x4D7873F4)
-I (..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders\stm32f10x_rcc.h)(0x4D7873F4)
+I (D:\Keil\ARM\Inc\ST\STM32F10x\system_stm32f10x.h)(0x532C2B9A)
+I (..\..\dex\stm32f10x_gpio.h)(0x4D7873F4)
+I (..\..\dex\stm32f10x_rcc.h)(0x4D7873F4)
 F (.\Abstract.txt)(0x532C2CE0)()

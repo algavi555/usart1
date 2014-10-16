@@ -362,7 +362,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_CL</Define>
               <Undefine></Undefine>
-              <IncludePath>..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders</IncludePath>
+              <IncludePath>..\STM32F10x_StdPeriph_Lib_V3.5.0\QQheaders;..\..\dex</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
