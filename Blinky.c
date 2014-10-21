@@ -4,7 +4,7 @@
 
 volatile unsigned int ReceiveData=0;
 
-unsigned short data;
+unsigned short data,a,az;
 
 void USART2_IRQHandler(void)
 {
@@ -33,6 +33,7 @@ void USART2_IRQHandler(void)
 
 int main(void)
 {	
+
 	//clocking
 	RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
 	RCC->APB2ENR |= RCC_APB2ENR_IOPEEN | RCC_APB2ENR_IOPDEN | RCC_APB2ENR_AFIOEN | RCC_APB2ENR_IOPAEN;
@@ -46,14 +47,26 @@ int main(void)
 	//usart init
 	AFIO->MAPR = 0x8;//alternate function for usart2 enable
 
+	
+	
+	
 		//UART
 	USART2->BRR=0x1D4C;
-	USART2->CR1 |= USART_CR1_RE|USART_CR1_TE|USART_CR1_UE|USART_CR1_RXNEIE; //enable receiver,transmitter,update,rec. interrupt
-	
-		//interrupts
+	//USART2->CR1 |= USART_CR1_RE|USART_CR1_TE|USART_CR1_UE|USART_CR1_RXNEIE; //enable receiver,transmitter,update,rec. interrupt
+	USART2->CR1 = 0;
+	USART2->CR1 |= ( (1<<3)|(1<<7));
+	USART2->CR1 |= 1<<13;
+
+
+
+
+//interrupts
 	NVIC_EnableIRQ(USART2_IRQn);
 	//GPIOE->ODR = 0;
 	USART2->DR = 0x31;
-
+	a=1;
+//USART2->DR = 0x31;
+//az=2;
+//USART2->DR = 0x31;
 while (1){USART2->DR = 0x26;}
 }
